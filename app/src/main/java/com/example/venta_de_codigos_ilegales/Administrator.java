@@ -2,6 +2,7 @@ package com.example.venta_de_codigos_ilegales;
 
 public class Administrator {
 
+    // cOMENTARIO ESTE ES UN CAMBIO
     private final String username;
     private final String password;
 
