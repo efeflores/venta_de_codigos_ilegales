@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Venta_de_codigos_ilegales"
+        tools:targetApi="31">
+        <activity
+            android:name=".Menu_de_la_aplicacion"
+            android:exported="false" />
+        <activity
+            android:name=".Orientado_a_Objetos"
+            android:exported="false" />
+        <activity
+            android:name=".lista"
+            android:exported="false" />
+        <activity
+            android:name=".Gestion_de_datos"
+            android:exported="false" />
+        <activity
+            android:name=".Menu"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
+    </application>
+
+</manifest>
