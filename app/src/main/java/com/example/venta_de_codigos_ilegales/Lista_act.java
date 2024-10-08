@@ -8,7 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class lista extends AppCompatActivity {
+public class Lista_act extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -11,4 +11,6 @@
     <string name="lista_gestin_de_datos">lista_gestin_de_datos</string>
     <string name="lista_gestin_de_datoas">lista gestin de datos</string>
     <string name="lista_gestin_de_dato">lista_gestin_de_datoas</string>
+    <string name="title_activity_venta_de_codigos_ilegales">venta_de_codigos_ilegales</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
