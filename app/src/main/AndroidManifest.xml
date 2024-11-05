@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Venta_de_codigos_ilegales"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/activity_menu" />
+
         <activity
             android:name=".Spinner_act"
             android:exported="false" />
@@ -29,7 +33,20 @@
         <activity
             android:name=".Login_act"
             android:exported="false" />
-
     </application>
 
-</manifest>
+    <application
+    <activity android:name=".Login_act">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity android:name=".Menu_act" />
+    <activity android:name=".Gestion_act" />
+    <activity android:name=".Lista_act" />
+    <activity android:name=".Spinner_act" />
+</application>
+
+
+    </manifest>

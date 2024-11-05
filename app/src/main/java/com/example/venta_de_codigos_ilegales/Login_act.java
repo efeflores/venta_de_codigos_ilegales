@@ -1,24 +1,29 @@
-package com.example.venta_de_codigos_ilegales;
-
-import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 public class Login_act extends AppCompatActivity {
+    private EditText usernameEditText, passwordEditText;
+    private Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        usernameEditText = findViewById(R.id.username);
+        passwordEditText = findViewById(R.id.password);
+        loginButton = findViewById(R.id.loginButton);
+
+        loginButton.setOnClickListener(v -> {
+            String username = usernameEditText.getText().toString();
+            String password = passwordEditText.getText().toString();
+
+            // Validar credenciales
+            if (username.equals("aiep") && password.equals("2024")) {
+                // Redirigir al menú
+                Intent intent = new Intent(Login_act.this, Menu_act.class);
+                startActivity(intent);
+                finish(); // Finaliza la actividad de login para que no pueda regresar con el botón atrás
+            } else {
+                Toast.makeText(Login_act.this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }

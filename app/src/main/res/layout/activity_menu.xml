@@ -43,21 +43,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/texto_menu">
 
                 <Button
-                    android:id="@+id/btn_1_menu"
+                    android:id="@+id/gestionButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="gestion"
                     app:cardCornerRadius="20dp" />
 
                 <Button
-                    android:id="@+id/btn_2_menu"
+                    android:id="@+id/listaButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="lista"
                     app:cardCornerRadius="20dp" />
 
                 <Button
-                    android:id="@+id/btn_3_menu"
+                    android:id="@+id/spinnerButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="spinner"

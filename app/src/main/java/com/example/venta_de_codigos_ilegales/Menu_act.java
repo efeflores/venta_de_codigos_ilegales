@@ -1,24 +1,32 @@
-package com.example.venta_de_codigos_ilegales;
-
-import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
+// Menu_act.java
 public class Menu_act extends AppCompatActivity {
+    private Button gestionButton, listaButton, spinnerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_menu);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        gestionButton = findViewById(R.id.gestionButton);
+        listaButton = findViewById(R.id.listaButton);
+        spinnerButton = findViewById(R.id.spinnerButton);
+
+        // Redirigir a Gestión
+        gestionButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Menu_act.this, Gestion_act.class);
+            startActivity(intent);
+        });
+
+        // Redirigir a Lista
+        listaButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Menu_act.this, Lista_act.class);
+            startActivity(intent);
+        });
+
+        // Redirigir a Spinner
+        spinnerButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Menu_act.this, Spinner_act.class);
+            startActivity(intent);
         });
     }
 }
