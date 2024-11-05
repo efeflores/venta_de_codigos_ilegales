@@ -33,20 +33,11 @@
         <activity
             android:name=".Login_act"
             android:exported="false" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
     </application>
 
-    <application
-    <activity android:name=".Login_act">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-    <activity android:name=".Menu_act" />
-    <activity android:name=".Gestion_act" />
-    <activity android:name=".Lista_act" />
-    <activity android:name=".Spinner_act" />
-</application>
 
-
-    </manifest>
+</manifest>
