@@ -1,31 +1,47 @@
 package com.example.venta_de_codigos_ilegales;
 
 public class Login_act extends AppCompatActivity {
-    private EditText usernameEditText, passwordEditText;
-    private Button loginButton;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+    public class LoginActivity extends AppCompatActivity {
 
-        usernameEditText = findViewById(R.id.username);
-        passwordEditText = findViewById(R.id.password);
-        loginButton = findViewById(R.id.loginButton);
+        private EditText editUsuario, editContrasena;
+        private Button btnIniciarSesion;
+        private Administrador administrador;
 
-        loginButton.setOnClickListener(v -> {
-            String username = usernameEditText.getText().toString();
-            String password = passwordEditText.getText().toString();
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_login);
 
-            // Validar credenciales
-            if (username.equals("aiep") && password.equals("2024")) {
-                // Redirigir al menú
-                Intent intent = new Intent(Login_act.this, Menu_act.class);
-                startActivity(intent);
-                finish(); // Finaliza la actividad de login para que no pueda regresar con el botón atrás
-            } else {
-                Toast.makeText(Login_act.this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
-            }
-        });
+            editUsuario = findViewById(R.id.editUsuario);
+            editContrasena = findViewById(R.id.editContrasena);
+            btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
+            administrador = new Administrador();
+
+            btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String usuario = editUsuario.getText().toString().trim();
+                    String contrasena = editContrasena.getText().toString().trim();
+
+                    if (usuario.isEmpty() || contrasena.isEmpty()) {
+                        Toast.makeText(LoginActivity.this, "Por favor complete todos los campos", Toast.LENGTH_SHORT).show();
+                    } else if (administrador.validarCredenciales(usuario, contrasena)) {
+                        Toast.makeText(LoginActivity.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
     }
-}

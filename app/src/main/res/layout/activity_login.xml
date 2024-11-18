@@ -80,9 +80,10 @@
                 android:id="@+id/textView"
                 android:layout_width="297dp"
                 android:layout_height="87dp"
-                android:text="TextView"
+                android:text="bienvenido esta aplicacion de venta de lol inicie la cuenta para continuar"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
